@@ -14,7 +14,12 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = Tweet.new
-    @tweet.save
+    @tweet.text = params[:text]
+    if @tweet.save
+      redirect_to @tweet
+    else
+      render :action => "new"
+    end
   end
 
 end

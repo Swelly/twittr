@@ -6,5 +6,4 @@ class Tweet < ActiveRecord::Base
 
   validates :text, presence: true
   validates :text, length: 8..140
-  validates :text, format: String
 end
